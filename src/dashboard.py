@@ -29,7 +29,7 @@ from util import regex_match, check_DNS, check_Allowed_IPs, check_remote_endpoin
     check_IP_with_range, clean_IP_with_range
 
 # Dashboard Version
-DASHBOARD_VERSION = 'v3.0.6'
+DASHBOARD_VERSION = 'v3.0.7'
 
 # WireGuard's configuration path
 WG_CONF_PATH = None
@@ -1957,7 +1957,7 @@ def check_update():
     """
     config = get_dashboard_conf()
     try:
-        data = urllib.request.urlopen("https://api.github.com/repos/amirmbn/WireGuard-Dashboard.git").read()
+        data = urllib.request.urlopen("https://api.github.com/repos/iPmartNetwork/WGDashboard.git").read()
         output = json.loads(data)
         release = [i for i in output if not i["prerelease"]]
 
