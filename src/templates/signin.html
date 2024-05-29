@@ -31,25 +31,25 @@
         </div>
         <small class="dashboard-version">Powerd by <a href="https://github.com/ipmartnetwork">ipmartnetwork</a></small>
     </body>
-    {% include "footer.html" %}
+{% include "footer.html" %}
 <script>
     let loginButton = $('button[type="submit"]');
     loginButton.on("click", function(e){
         e.preventDefault();
-        let $password = $("#گذرواژه");
-        let $username = $("#نام کاربری");
+        let $password = $("#password");
+        let $username = $("#username");
         let req = [$password, $username];
         let check = true
         for (let i = 0; i < req.length; i++){
             if ($(req[i]).val().length === 0){
-                loginButton.html("به اکانت خود وارد شوید");
+                loginButton.html("ورود");
                 check = false;
                 $(req[i]).addClass("is-invalid");
                 break;
             }
         }
         if (check){
-            $(this).html("Signing In...").attr("disabled", "disabled");
+            $(this).html("در حال ورود...").attr("disabled", "disabled");
             $.ajax({
                 url: "/auth",
                 method: "POST",
@@ -72,7 +72,7 @@
                     }
                 }else{
                     $(".alert").html(res.msg).removeClass("d-none").fadeIn();
-                    loginButton.html("Sign In").removeAttr("disabled");
+                    loginButton.html("ورود").removeAttr("disabled");
                     $("input[required]").addClass("is-invalid");
                 }
             });
