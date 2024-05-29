@@ -126,7 +126,9 @@ a {
     border-width: 0;
     border-radius: 0;
 }
-
+.form-group > input {
+    background-color: none;
+}
 .form-control-dark {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.1);
@@ -142,7 +144,15 @@ a {
     color: #28a745 !important;
 }
 .Under-img {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
     text-align: center;
+}
+/* ////// */
+
+.dashboard-version > a {
+    color: #13305e;
 }
 .dot {
     width: 10px;
@@ -591,6 +601,10 @@ pre.index-alert {
 }
 
 .login-btn {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     margin-top: 3rem;
     padding: 7px 0 12px;
@@ -599,9 +613,11 @@ pre.index-alert {
     font-family: IRANSans;
     border: none;
     border-radius: 14px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(75, 75, 75, 0.6);
 }
-
+.login-btn > i {
+    margin-left: 10px;
+}
 .btn-success,
 .btn-danger {
     padding: 7px 14px 8px !important;
