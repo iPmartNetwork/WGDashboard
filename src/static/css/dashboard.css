@@ -82,7 +82,7 @@ a { text-decoration:none;}
 }
 
 .sidebar .nav-link.active {
-    color: #0F52BA;
+    color: #13305e;
 }
 
 .sidebar .nav-link:hover .feather,
@@ -173,7 +173,7 @@ a { text-decoration:none;}
 }
 
 .dot-red{
-    background-color: #C70039!important;
+    background-color: rgba(239, 103, 7, 0.87) !important;
     box-shadow: 0 0 0 0.2rem #28a74545;
 }
 
@@ -235,7 +235,7 @@ a { text-decoration:none;}
 }
 
 .btn-delete-peer:hover{
-    color: #dc3545;
+    color: rgba(239, 103, 7, 0.87);
 }
 
 .btn-setting-peer:hover{
@@ -516,8 +516,8 @@ label[for="username"], label[for="password"]{
 }
 
 #delete_bulk_modal .list-group a.active{
-    background-color: #dc3545;
-    border-color: #dc3545;
+    background-color: rgba(239, 103, 7, 0.87);
+    border-color: rgba(239, 103, 7, 0.87);
 }
 
 #selected_peer_list{
