@@ -20,15 +20,16 @@
         <div class="container-fluid login-container-fluid">
             <main role="main" class="container login-container">
                 <div class="login-box">
-                   
                     <span class="Under-img">
                         <p>به اکانت خود وارد شوید</p>
                         <img src="../static/img/user.png" class="login-logo" />
                     </span>
                     <form class="internal-box" action="/auth" method="post">
-                      
+                        {% if message != "" %}
 
                         <div class="alert alert-danger d-none" role="alert"></div>
+                        {% if message != "" %}
+
                         <div class="form-group">
                             <input type="text" class="form-control mb-2" id="username" name="username" placeholder="username" dir="ltr" />
                         </div>
