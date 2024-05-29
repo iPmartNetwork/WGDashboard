@@ -1,53 +1,49 @@
-<html>
-    {% with title="Sign In"%}
-        {% include "header.html"%}
-    {% endwith %}
+<html lang="fa" dir="rtl">
+    <link rel="stylesheet" href="/WGDashboard-main/src/static/css/dashboard.css" />
+    <link rel="stylesheet" href="/WGDashboard-main/src/static/css/bootstrap.min.css.map" />
+
+    {% with title="ورود به پنل"%} {% include "header.html"%} {% endwith %}
     <style>
-        .login-container-fluid{
-            display: flex;
-            height: calc( 100% - 240px );
-            align-items: center;
+        body {
+            background-image: url(../static/img/background.jpg) !important;
+            background-size: cover;
         }
     </style>
     <body>
-        {% include "navbar.html" %}
         <div class="container-fluid login-container-fluid">
             <main role="main" class="container login-container">
-                <div class="login-box" style="margin: auto !important;">
-                    <h1 class="text-center">Sign in</h1>
-                    <h5 class="text-center">to WGDashboard</h5>
-                    <form style="margin-left: auto !important; margin-right: auto !important; max-width: 500px;" action="/auth" method="post">
-                        {% if message != "" %}
-                            <div class="alert alert-warning" role="alert">You need to sign in first</div>
-                        {% endif %}
-                        <div class="alert alert-danger d-none" role="alert" style="margin-top: 1rem; margin-bottom: 0rem;"></div>
+                <div class="login-box">
+                    <img src="../static/img/user.png" class="login-logo" />
+                    <span class="Under-img">به اکانت خود وارد شوید</span>
+                    <form class="internal-box" action="/auth" method="post">
+                        <div class="alert alert-warning text-center" role="alert">لطفا ابتدا وارد شوید.</div>
+
+                        <div class="alert alert-danger d-none" role="alert"></div>
                         <div class="form-group">
-                            <label for="username" class="text-left" style="font-size: 1rem"><i class="bi bi-person-circle"></i></label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Your username" required>
+                            <input type="text" class="form-control mb-2" id="username" name="username" placeholder="username" dir="ltr" />
                         </div>
                         <div class="form-group">
-                            <label for="password" class="text-left" style="font-size: 1rem"><i class="bi bi-key-fill"></i></label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Your password" required>
+                            <input type="password" class="form-control mb-2" id="password" name="password" placeholder="password" dir="ltr" />
                         </div>
-                      <button type="submit" class="btn btn-dark" style="width: 100%">Sign In</button>
+                        <button type="submit" class="login-btn">ورود</button>
                     </form>
                 </div>
             </main>
         </div>
-        <small class="text-muted" style="position: fixed; bottom: 0; width: 100%; text-align: center; margin-bottom: 2rem">Version: {{ version }}</small>
+        <small class="dashboard-version">Version: {{ version }}</small>
     </body>
-{% include "footer.html" %}
-<script>
+    {% include "footer.html" %}
+    <script>
     let loginButton = $('button[type="submit"]');
     loginButton.on("click", function(e){
         e.preventDefault();
-        let $password = $("#password");
-        let $username = $("#username");
+        let $password = $("#گذرواژه");
+        let $username = $("#نام کاربری");
         let req = [$password, $username];
         let check = true
         for (let i = 0; i < req.length; i++){
             if ($(req[i]).val().length === 0){
-                loginButton.html("Sign In");
+                loginButton.html("به اکانت خود وارد شوید");
                 check = false;
                 $(req[i]).addClass("is-invalid");
                 break;
