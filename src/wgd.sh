@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# wgd.sh - Copyright(C) 2021 Donald Zou & amirmbn [https://github.com/amirmbn]
+# wgd.sh - Copyright(C) 2021 Donald Zou & amirmbn & iPmartNetwork [https://github.com/iPmartNetwork]
 ## Edited By amirmbn
 
 app_name="dashboard.py"
@@ -24,7 +24,7 @@ help() {
   NC='\033[0m' 
   display_logo2
   printf "${YELLOW}=================================================================================\n"
-  printf "${YELLOW}+     ${BLUE}<Wireguard Panel> by Donald Zou & amirmbn ${BLUE}https://github.com/amirmbn        ${YELLOW}+\n"
+  printf "${YELLOW}+     ${BLUE}<WGDashbord> by Donald Zou & amirmbn & iPmartNetwork ${BLUE}https://github.com/iPmartNetwork        ${YELLOW}+\n"
   printf "${YELLOW}=================================================================================${NC}\n"
   printf "${YELLOW}| Usage: ${GREEN}./wgd.sh <option>${NC}                                                      ${YELLOW}|\n"
   printf "${YELLOW}|                                                                               ${YELLOW}|\n"
