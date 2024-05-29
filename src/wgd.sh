@@ -215,7 +215,7 @@ print_box() {
 }
 
 update_wgd() {
-  new_ver=$(python3 -c "import json; import urllib.request; data = urllib.request.urlopen('https://api.github.com/repos/ipmartnetwork/WGDashboard.git').read(); output = json.loads(data);print(output['tag_name'])")
+  new_ver=$(python3 -c "import json; import urllib.request; data = urllib.request.urlopen('https://api.github.com/repos/donaldzou/WGDashboard/releases/latest').read(); output = json.loads(data);print(output['tag_name'])")
   printf "%s\n" "$dashes"
   printf "| Are you sure you want to update to the %s? (Y/N): " "$new_ver"
   read up
