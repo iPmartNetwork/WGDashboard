@@ -11,7 +11,7 @@
 
 ## پیش نیاز
 
-اوبنتو 22 و بالاتر
+اوبنتو 20 و بالاتر
 
 ## آموزش و مراحل نصب
 
@@ -42,6 +42,33 @@ ip route list default
 ```
 nano /etc/wireguard/wg0.conf
 ```
+
+
+در داخلفایل متن زیر را کپی و پیست کنید
+
+```
+[Interface]
+Address = 110.20.0.1/24
+PostUp = iptables -I INPUT -p udp --dport 51820 -j ACCEPT
+PostUp = iptables -I FORWARD -i eth0 -o wg0 -j ACCEPT
+PostUp = iptables -I FORWARD -i wg0 -j ACCEPT
+PostUp = iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostUp = ip6tables -I FORWARD -i wg0 -j ACCEPT
+PostUp = ip6tables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D INPUT -p udp --dport 51820 -j ACCEPT
+PostDown = iptables -D FORWARD -i eth0 -o wg0 -j ACCEPT
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT
+PostDown = iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+PostDown = ip6tables -D FORWARD -i wg0 -j ACCEPT
+PostDown = ip6tables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+ListenPort = 51820
+PrivateKey = محل کد کلید پرایویت بالا گرفتیم
+SaveConfig = true
+```
+
+- پورت وایرگارد در اینجا 51820 است، میتوانید پورت دیگری انتخاب کنید
+- کلید پرایوت  که ساخته بودید را به در (( محل کد کلید پرایویت )) قرار دهید
+
 
 
 
