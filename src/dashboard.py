@@ -1,26 +1,28 @@
-import psutil
-import os
-import secrets
-import subprocess
-import time
-from datetime import datetime, timedelta
-from glob import glob
-from operator import itemgetter
-from pathlib import Path
-from threading import Thread
+"""
+< WGDashboard > - Copyright(C) 2024 iPmartNetwork [https://github.com/ipmartnetwork]
+Under Apache-2.0 License
+"""
+
 import sqlite3
 import configparser
 import hashlib
 import ipaddress
 import json
+# Python Built-in Library
+import os
+import secrets
+import subprocess
+import time
 import re
 import urllib.parse
 import urllib.request
 import urllib.error
-import zipfile
+from datetime import datetime, timedelta
+from operator import itemgetter
+# PIP installed library
 import ifcfg
-import pytz
-from flask import Flask, request, render_template, redirect, url_for, session, jsonify, g, send_file
+import psutil
+from flask import Flask, request, render_template, redirect, url_for, session, jsonify, g
 from flask_qrcode import QRcode
 from icmplib import ping, traceroute
 
@@ -29,7 +31,7 @@ from util import regex_match, check_DNS, check_Allowed_IPs, check_remote_endpoin
     check_IP_with_range, clean_IP_with_range
 
 # Dashboard Version
-DASHBOARD_VERSION = 'v3.0.6'
+DASHBOARD_VERSION = 'v3.0.6.2'
 
 # WireGuard's configuration path
 WG_CONF_PATH = None
@@ -37,11 +39,8 @@ WG_CONF_PATH = None
 # Dashboard Config Name
 configuration_path = os.getenv('CONFIGURATION_PATH', '.')
 DB_PATH = os.path.join(configuration_path, 'db')
-
 if not os.path.isdir(DB_PATH):
     os.mkdir(DB_PATH)
-
-DB_FILE_PATH = os.path.join(configuration_path, 'db', 'wgdashboard.db')
 DASHBOARD_CONF = os.path.join(configuration_path, 'wg-dashboard.ini')
 
 # Upgrade Required
@@ -55,6 +54,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 # Enable QR Code Generator
 QRcode(app)
+
 
 
 # TODO: use class and object oriented programming
