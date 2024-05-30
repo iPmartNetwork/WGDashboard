@@ -166,6 +166,18 @@ sudo systemctl status iPmart.service
 
 
 
+## پیش نمایش
+
+![Login](./img/login.png)
+![Dashboard](./img/dashboard.png)
+![Configuration](./img/configuration.png)
+![Setting](./img/setting.png)
+
+
+
+
+
+
 
 
 # تلگرام
