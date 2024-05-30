@@ -15,3 +15,14 @@
 
 ## آموزش و مراحل نصب
 
+
+ابتدا با کد ستوری زیر سرور را اپدیت کنید و وایرگارد را نصب کنید 
+```
+apt update -y && apt install wireguard -y
+```
+
+با دستور زیر پرایوت کی بسازید و در یک جا کپی کنید
+
+```
+wg genkey | sudo tee /etc/wireguard/server_private.key
+```
