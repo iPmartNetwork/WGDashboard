@@ -122,11 +122,80 @@ sudo chmod -R 755 /etc/wireguard
 
 
 
+- به پنل خودتون با http://Your_Server_IP:2249 وارد شوید.
+-  نام کاربری admin و رمزعبور admin است
+- برای تانل از تانل رتهول استفاده کنید که در همین گیت هاب موجود میباشد.
+- درصورت تانل، داخل تنظیمات Peer Remote Endpoint را به IP ایران تغییر دهید
+- اگر به مشکل internal error در زمان لود پنل خوردید، سرور را یک بار ریبوت کنید و سپس دستور زیر را بزنید
+
+
+```
+cd src && ./wgd.sh restart
+```
+
+
+- برای اینکه دیگر مشکل بالا نیامدن پنل بعد از ریبوت یا ریستارت نداشته باشین با کد های پایین یک سرویس ایجاد کنید مراحا را خط به خط انجام دهید.
+
+```
+nano /etc/systemd/system/iPmart.service
+```
+
+
+ ```
+[Unit]
+After=network.service
+
+[Service]
+WorkingDirectory=/root/src/
+ExecStart=/usr/bin/python3 /root/src/dashboard.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
+
+```
+
+```
+sudo chmod 664 /etc/systemd/system/iPmart.service
+sudo systemctl daemon-reload
+sudo systemctl enable iPmart.service
+sudo systemctl start iPmart.service
+sudo systemctl status iPmart.service
+```
 
 
 
 
 
+# تلگرام
+
+[@ipmart_network](https://t.me/ipmart_network)
+
+[@iPmart Group](https://t.me/ipmartnetwork_gp)
+
+
+
+
+ # حمایت از ما :hearts:
+حمایت های شما برای ما دلگرمی بزرگی است<br> 
+<p align="left">
+<a href="https://plisio.net/donate/kB7QU7f7" target="_blank"><img src="https://plisio.net/img/donate/donate_light_icons_mono.png" alt="Donate Crypto on Plisio" width="240" height="80" /></a><br>
+	
+|                    TRX                   |                       BNB                         |                    Litecoin                       |
+| ---------------------------------------- |:-------------------------------------------------:| -------------------------------------------------:|
+| ```TJbTYV1fFo2485sYMyajxGPLFzxmNmPrNA``` |  ```0x4af3de9b303a8d43105e284823d95b4c600961a3``` | ```MPrkzFiNtw4Rg67bbZB6gCxa9LV87orABM``` |	
+
+</p>	
+
+
+
+
+<p align="center">
+<picture>
+<img width="160" height="160"  alt="XPanel" src="https://github.com/iPmartNetwork/iPmart-SSH/blob/main/images/logo.png">
+</picture>
+  </p> 
 
 
 
