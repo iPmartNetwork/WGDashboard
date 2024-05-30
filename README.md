@@ -13,7 +13,7 @@
 
 اوبنتو 20 و بالاتر
 
-## آموزش و مراحل نصب
+## آموزش و مراحل نصب وایرگارد
 
 
 ابتدا با کد ستوری زیر سرور را اپدیت کنید و وایرگارد را نصب کنید 
@@ -67,8 +67,58 @@ SaveConfig = true
 ```
 
 - پورت وایرگارد در اینجا 51820 است، میتوانید پورت دیگری انتخاب کنید
-- کلید پرایوت  که ساخته بودید را به در (( محل کد کلید پرایویت )) قرار دهید
+- کلید پرایوت  که ساخته بودید را در (( محل کد کلید پرایویت )) قرار دهید
 
+
+
+## مراحل نصب پنل مدیریتی وایرگارد
+
+
+کد های دستوری زیر را خط به خط وارد کنید 
+
+
+```
+apt install git
+```
+```
+git clone https://github.com/iPmartNetwork/WGDashboard.git
+```
+```
+cd WGDashboard
+```
+```
+mv src /root/
+```
+```
+cd
+```
+```
+rm -rf WGDashboard
+```
+```
+apt-get -y install python3-pip
+```
+```
+apt install gunicorn -y
+```
+```
+cd src
+```
+```
+sudo chmod u+x wgd.sh
+```
+```
+pip install -r requirements.txt
+```
+```
+sudo ./wgd.sh install
+```
+```
+sudo chmod -R 755 /etc/wireguard
+```
+```
+./wgd.sh start
+```
 
 
 
