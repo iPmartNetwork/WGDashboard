@@ -1,0 +1,55 @@
+
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@latest/Vazirmatn-font-face.css');
+:root {
+  --main-bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-color: #111;
+  --accent: #0d6efd;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+body {
+  font-family: 'Vazirmatn', sans-serif !important;
+  background: var(--main-bg);
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+body.dark-mode {
+  background: #1e1e2f;
+  color: #f1f1f1;
+}
+.card {
+  border-radius: 1rem;
+  background: var(--card-bg);
+  box-shadow: 5px 5px 15px var(--shadow), -5px -5px 15px #ffffff;
+  border: none;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.01);
+}
+.btn {
+  border-radius: 0.75rem;
+  font-weight: 600;
+}
+.btn-glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--accent);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.modal-content {
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+body.dark-mode .card, 
+body.dark-mode .modal-content {
+  background-color: #2e2e3e;
+}
+body.dark-mode .btn {
+  color: #fff;
+}
