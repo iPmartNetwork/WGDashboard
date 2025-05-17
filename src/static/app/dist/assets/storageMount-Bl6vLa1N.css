@@ -1,0 +1,69 @@
+/* Modern Dark Theme: Deep Blue & Bright Orange */
+:root {
+  --primary-bg: #101a2b;
+  --secondary-bg: #18243a;
+  --card-bg: #1a2233;
+  --primary-text: #f5f6fa;
+  --secondary-text: #bfc9da;
+  --accent: #ff9800;
+  --accent-hover: #ffa733;
+  --border: #22304a;
+  --input-bg: #162033;
+  --input-border: #22304a;
+  --input-text: #f5f6fa;
+  --btn-bg: #22304a;
+  --btn-bg-hover: #ff9800;
+  --btn-text: #f5f6fa;
+  --shadow: 0 2px 16px 0 #000a1a44;
+}
+body, html {
+  background: var(--primary-bg) !important;
+  color: var(--primary-text) !important;
+}
+.card, .modal-content, .dropdown-menu, .form-control, .input, .form {
+  background: var(--card-bg) !important;
+  color: var(--primary-text) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow);
+}
+.btn, button, .titleBtn {
+  background: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+  border: 1px solid var(--accent);
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover, button:hover, .titleBtn:hover {
+  background: var(--btn-bg-hover) !important;
+  color: #101a2b !important;
+  border-color: var(--accent-hover);
+}
+input, textarea, select {
+  background: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border: 1px solid var(--input-border) !important;
+}
+a, .link, .text-primary {
+  color: var(--accent) !important;
+}
+a:hover, .link:hover, .text-primary:hover {
+  color: var(--accent-hover) !important;
+}
+hr {
+  border-color: var(--border) !important;
+}
+::-webkit-scrollbar {
+  background: var(--secondary-bg);
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+/* Utility classes for modern look */
+.shadow, .shadow-sm {
+  box-shadow: var(--shadow) !important;
+}
+.rounded-3 {
+  border-radius: 1rem !important;
+}
+.square[data-v-2ad535bb]{height:var(--2ec4d3bc);transition:background-color .5s cubic-bezier(.42,0,.22,1)}.square[data-v-9509d7a0]{height:var(--2dc8ab7e);transition:background-color .5s cubic-bezier(.42,0,.22,1)}

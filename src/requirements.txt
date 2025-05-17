@@ -1,0 +1,10 @@
+bcrypt
+ifcfg
+psutil
+pyotp
+Flask
+flask-cors
+icmplib
+gunicorn
+requests
+tcconfig
