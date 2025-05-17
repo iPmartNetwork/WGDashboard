@@ -653,7 +653,7 @@ fi
 cd Easy-WGDashboard || exit
 # Install WGDashboard
 echo "Installing WGDashboard ....."
-git clone  -q https://github.com/iPmartNetwork/WGDashboard.git iPWGDashboard
+git clone  -q https://github.com/iPmartNetwork/WGDashboard.git WGDashboard
 cd WGDashboard/src
 #apt install python3-pip -y && pip install gunicorn && pip install -r requirements.txt --ignore-installed
 apt install python3-pip -y >/dev/null 2>&1 && pip install gunicorn >/dev/null 2>&1 && pip install -r requirements.txt --ignore-installed >/dev/null 2>&1
@@ -677,7 +677,7 @@ cp "$SERVICE_FILE" /etc/systemd/system/wg-dashboard.service
 # Set permissions
 chmod 664 /etc/systemd/system/wg-dashboard.service
 
-# Enable and start iPWGDashboard service
+# Enable and start WGDashboard service
 systemctl enable wg-dashboard.service --quiet
 systemctl restart wg-dashboard.service
 
